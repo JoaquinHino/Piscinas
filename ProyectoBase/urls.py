@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ProyectoApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/',views.renderTemplate3, name='index'),
+    path('shop/', views.renderTemplate4, name='shop'),
+    path('cart/', views.renderTemplate5, name='cart'),
+    path('contact/', views.contacto_view, name='contacto_view'),
+    path('login/', views.login_view, name='login'),
+    path('checkout/', views.renderTemplate8, name='checkout'),
+    path('registro/', views.registro_view, name='registro'),
+    path('registro_exitoso/', views.registro_exitoso, name='registro_exitoso'),
 ]

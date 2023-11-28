@@ -25,7 +25,7 @@ SECRET_KEY = '=2)sl#1_#l&6oew-%jh&&33la0wed55_f0+sh3iyzgofiz-czo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['piscinasweb.azurewebsites.net','http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['piscinasweb.azurewebsites.net','http://127.0.0.1:8000/','127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ProyectoBase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,9 +76,16 @@ WSGI_APPLICATION = 'ProyectoBase.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'piscinasweb',
+        'USER': 'joaquinsql',
+        'PASSWORD': '21402843jj-',
+        'HOST': 'joaquinpiscinas.database.windows.net',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+        },
+    },
 }
 
 

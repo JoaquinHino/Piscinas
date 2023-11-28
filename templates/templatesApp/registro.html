@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <a href="{% url 'login' %}"><p>Volver al login</p></a>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <h1 class="text-center">Registro de Usuario</h1>
+            <form method="post" action="{% url 'registro' %}" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.nombre.label_tag }}
+                    {{ form.nombre }}
+                    <small class="text-danger">{{ form.nombre.errors }}</small>
+                </div>
+                <div class="form-group">
+                    {{ form.correo.label_tag }}
+                    {{ form.correo }}
+                    <small class="text-danger">{{ form.correo.errors }}</small>
+                </div>
+                <div class="form-group">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    <small class="text-danger">{{ form.password.errors }}</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
