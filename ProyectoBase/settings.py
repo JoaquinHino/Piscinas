@@ -25,7 +25,7 @@ SECRET_KEY = '=2)sl#1_#l&6oew-%jh&&33la0wed55_f0+sh3iyzgofiz-czo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['piscinasweb.azurewebsites.net','http://127.0.0.1:8000/','127.0.0.1']
+ALLOWED_HOSTS = ['piscinasweb.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
